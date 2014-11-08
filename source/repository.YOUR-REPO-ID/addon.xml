@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="repository.YOUR-REPO-ID" name="YOUR-NAME" version="0.0.1" provider-name="YOUR-NAME">
+    <extension point="xbmc.addon.repository" name="YOUR-NAME">
+        <info compressed="false">https://REPO-ADDRESS/repo/addons.xml</info>
+        <checksum>https://REPO-ADDRESS/repo/addons.xml.md5</checksum>
+        <datadir zip="true">https://REPO-ADDRESS/repo</datadir>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <summary>Install XBMC Addons</summary>
+        <description>Download and install addons by YOUR-NAME</description>
+        <platform>all</platform>
+    </extension>
+</addon>
