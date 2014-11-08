@@ -10,7 +10,7 @@ then
   exit 0
 fi
 
-if [ -e .firstrun ]
+if [ -d ./source/repository.YOUR-REPO-ID ]
 then
   clear
   echo
