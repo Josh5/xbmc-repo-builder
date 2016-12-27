@@ -1,8 +1,8 @@
 xbmc-repo-builder
 ======================
 
-* Author: Josh Sunnex (tinyhtpc@gmail.com)
-* Website: http://TinyHTPC.co.nz
+* Author: Josh Sunnex (josh@ember-dev.com)
+* Website: http://ember-dev.com
 
 ## Introduction
 This is a Simple XBMC Repository template with buid scripts that will allow you to quickly and easy setup/maintain your repo.
@@ -41,6 +41,8 @@ For using bitbucket.org:
 https://bitbucket.org/########/xbmc-repo-builder/raw/master/
 ```
 
+Dont forget to change the default "icon.png" before distributing your repo.
 
 
-**Josh.5** - TinyHTPC  
+
+**Josh.5** - EmbER-Dev
