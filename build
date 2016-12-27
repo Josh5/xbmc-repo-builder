@@ -88,10 +88,12 @@ then
 fi
 
 
+echo "Updating submodules..."
+git submodule foreach git pull
 
 cd ./source
-clear
 echo "Generating Repo..."
 echo
-python ./generate_repository
+python ./addons_xml_generator.py
+python ./generate_repository.py
 cd ..
