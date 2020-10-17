@@ -15,16 +15,16 @@ def zipdir(path, zip):
             zip.write(os.path.join(root, file))
 
 def buildrepo(f):
-    print "Checking for location: "+f
+    print ("Checking for location: {}".format(f))
     #folder
     d = os.path.dirname(f)
     if not os.path.exists(d):
         os.makedirs(d)
-    print "Not Found! Creating: "+d
+    print ("Not Found! Creating: {}".format(f))
 
-print "-----------------------------------------------------------------------------"
-print "------------------------------------START------------------------------------"
-print "-----------------------------------------------------------------------------"
+print ("-----------------------------------------------------------------------------")
+print ("------------------------------------START------------------------------------")
+print ("-----------------------------------------------------------------------------")
 
 addonxml      = "./addons.xml"
 addonxmlmd5   = "./addons.xml.md5"
@@ -40,20 +40,20 @@ for x in os.listdir('./'):
         tree = ET.parse('./'+x+'/addon.xml')
         root = tree.getroot()
         version = root.get('version')
-        print "Version: "+version
+        print ("Version: {}".format(version))
         isrepo = False
         if x == 'repository.ember':
             isrepo = True
         #### DO:
         buildrepo(dest_dir+"*")
         for file in glob.glob('./'+x+'/*changelog.txt'):
-            print 'Copying: '+file+' >>>> '+dest_dir+'changelog-'+version+'.txt'
+            print ('Copying: {} >>>> {}changelog-{}.txt'.format(file,dest_dir,version))
             shutil.copy(file, dest_dir+'changelog-'+version+'.txt')
         for file in glob.glob('./'+x+'/*icon.*'):
-            print 'Copying: '+file+' >>>> '+dest_dir+'icon.png'
+            print ('Copying: {} >>>> {}icon.png'.format(file,dest_dir))
             shutil.copy(file, dest_dir)
         for file in glob.glob('./'+x+'/*fanart.*'):
-            print 'Copying: '+file+' >>>> '+dest_dir+'fanart.jpg'
+            print ('Copying: {} >>>> {}fanart.jpg'.format(file,dest_dir))
             shutil.copy(file, dest_dir)
         addon_zip = '../repo/'+x+'/'+x+'-'+version+'.zip'
         if not os.path.exists(addon_zip):
@@ -79,7 +79,7 @@ os.remove(addonxmlmd5)
 #add version numbers to zip and changelog
 
 
-print "---------------------------------------------------------------------------"
-print "------------------------------------END------------------------------------"
-print "---------------------------------------------------------------------------"
+print ("---------------------------------------------------------------------------")
+print ("------------------------------------END------------------------------------")
+print ("---------------------------------------------------------------------------")
 
